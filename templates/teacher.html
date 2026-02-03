@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teacher Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Teacher Panel</h2>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="message">{{ messages[0] }}</div>
+    {% endif %}
+    {% endwith %}
+
+    <a href="/register">Register Student</a>
+    <a href="/train">Train Model</a>
+    <a href="/attendance">Show Attendance</a>
+
+    <!-- THIS BUTTON -->
+    <a href="/students">Remove Registration</a>
+    <!-- Meaning: show all registered students -->
+
+    <a href="/" class="back">Back</a>
+</div>
+</body>
+</html>

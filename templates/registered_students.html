@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Students</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Students</h2>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="message">{{ messages[0] }}</div>
+    {% endif %}
+    {% endwith %}
+
+    {% if students %}
+        {% for s in students %}
+            <p>
+                <b>ID:</b> {{ s.ID }} <br>
+                <b>Name:</b> {{ s.Name }} <br>
+                <a href="/remove/{{ s.ID }}" style="color:red;">
+                    Remove Registration
+                </a>
+            </p>
+            <hr>
+        {% endfor %}
+    {% else %}
+        <p>No students registered.</p>
+    {% endif %}
+
+    <a href="/teacher" class="back">Back</a>
+</div>
+</body>
+</html>

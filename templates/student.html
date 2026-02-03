@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Student Panel</h2>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="message" style="white-space: pre-line;">
+            {{ messages[0] }}
+        </div>
+    {% endif %}
+    {% endwith %}
+
+    <!-- Mark Attendance -->
+    <form action="/mark" method="post">
+        <button type="submit">Mark Attendance</button>
+    </form>
+
+    <!-- Show Attendance -->
+    <a href="/attendance" class="btn">Show Attendance</a>
+
+    <!-- Back -->
+    <a href="/" class="btn back">Back</a>
+</div>
+</body>
+</html>

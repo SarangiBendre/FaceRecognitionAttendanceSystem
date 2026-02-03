@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance Records</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Attendance Records</h2>
+    <table>
+        <tr>
+            <th>ID</th><th>Name</th><th>Date</th><th>Time</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ row.ID }}</td>
+            <td>{{ row.Name }}</td>
+            <td>{{ row.Date }}</td>
+            <td>{{ row.Time }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/" class="back">Back</a>
+</div>
+</body>
+</html>

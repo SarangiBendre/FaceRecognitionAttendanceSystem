@@ -1,0 +1,5 @@
+dataset/
+attendance/
+students.csv
+trained_model.yml
+__pycache__/
