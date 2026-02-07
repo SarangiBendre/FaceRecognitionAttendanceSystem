@@ -121,4 +121,4 @@ This project demonstrates how computer vision and web technologies can be combin
 ✔ Explains deployment clearly
 ✔ Mentions privacy (very important)
 
----
+
